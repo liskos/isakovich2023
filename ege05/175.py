@@ -1,12 +1,8 @@
 def f(n):
-    s = bin(n)[2:]
-    while s[0] != "1":
-        s = s[:-1]
-        s = s[:-2]
+    s = bin(n)[2:-2]
     return int(s, 2)
 
-k = 0
+k = set()
 for i in range(20, 601):
-    if f(i) == i:
-        k += 1
-print(k)
+    k.add(f(i))
+print(len(k))

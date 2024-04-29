@@ -7,9 +7,7 @@ def f(n):
     c = str(max(a1,a2,a3))
     return str(d) + str(c)
 
-m = ""
+
 for i in range(1000, 10000):
-    if f(i) == "37" and f(i) > m:
-        m = f(i)
-        print(m)
-        break
+    if f(i) == "37":
+        print(i)

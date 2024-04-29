@@ -11,6 +11,6 @@ def f(n):
 
 m = ""
 for i in range(1000, 10000):
-    if f(i) == "1215":
+    if f(i) == "1114":
         m = i
 print(m)

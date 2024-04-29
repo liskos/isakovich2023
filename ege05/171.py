@@ -1,7 +1,7 @@
 def f(n):
     s = bin(n)[2:]
     while len(s) < 8:
-        s += "0"
+        s = "0" + s
     b = s[0] + s[1] + s[-2] + s[-1]
     return int(b, 2)
 

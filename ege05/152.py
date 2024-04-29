@@ -1,7 +1,6 @@
 def f(n):
     b = bin(n)[2:]
-    b += b[-1]
-    if b.count("1") % 2 == 0:
+    if n % 2 == 0:
         b += "01"
     else:
         b += "10"
@@ -10,5 +9,5 @@ def f(n):
 
 for i in range(1, 100000):
     if f(i) > 81:
-        print(i)
+        print(f(i))
         break

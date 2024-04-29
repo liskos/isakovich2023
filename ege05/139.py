@@ -14,5 +14,5 @@ def f(n):
 
 for i in range(1, 100000):
     if f(i) > 144:
-        print(i)
+        print(f(i))
         break

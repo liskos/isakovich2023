@@ -12,6 +12,5 @@ def f(n):
 
 
 for i in range(1, 100000):
-    if 125 < f(i):
-        print(i)
-        break
+    if 125 > f(i):
+        print(f(i))
