@@ -4,7 +4,7 @@ def f(n):
         b = b + '1'
     else:
         b = b + '0'
-    if n % 2 == 0:
+    if int(b, 2) % 2 == 0:
         b = b + '1'
     else:
         b = b + '0'

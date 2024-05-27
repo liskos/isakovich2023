@@ -10,8 +10,8 @@ def f(n):
         b = b[:len(b)//2 - 1] + b[len(b)//2 + 2:]
     return int(b, 2)
 
-a = []
+a = set()
 for i in range(4, 1000):
     if 50 <= f(i) <= 100:
-        a.append(i)
-print(len(a))
+        a.add(f(i))
+print(a, len(a))
