@@ -9,8 +9,8 @@ def f(n):
         nmin = a[2] + a[0]
     return int(nmax) - int(nmin)
 
-
+a = []
 for i in range(100, 1000):
-    if f(i) == 60:
-        print(i)
-        break
+    if f(i) == 50:
+        a.append(i)
+print(max(a))

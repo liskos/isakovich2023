@@ -9,8 +9,8 @@ def f(n):
         nmin = a[2] + a[0]
     return int(nmax) - int(nmin)
 
-
-for i in range(100, 1000):
-    if f(i) == 60:
-        print(i)
-        break
+k = 0
+for i in range(100, 200):
+    if f(i) == 30:
+        k+=1
+print(k)

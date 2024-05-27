@@ -11,6 +11,6 @@ def f(n):
 
 
 for i in range(100, 1000):
-    if f(i) == 60:
+    if f(i) == 63:
         print(i)
         break
