@@ -6,8 +6,10 @@ def f(n):
         b = '11' + b + '11'
     return int(b, 2)
 
+
+print(f(14))
 a = []
 for i in range(1, 10000):
     if f(i) < 126:
-        a.append(i)
+        a.append(f(i))
 print(max(a))

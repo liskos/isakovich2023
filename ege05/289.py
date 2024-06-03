@@ -8,6 +8,6 @@ def f(n):
 
 a = []
 for i in range(1, 10000):
-    if f(i) <= 412:
+    if f(i) >= 412:
         a.append(i)
 print(min(a))
