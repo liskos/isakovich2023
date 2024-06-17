@@ -6,11 +6,10 @@ def f(n):
         b = b + '0'
     b = b + hex(sum(int(x, 16) for x in b) % 16)[2:]
     b = b + hex(sum(int(x, 16) for x in b) % 16)[2:]
-    z = [b.count(x) for x in b]
-    return max(list(z))  == min(list(z)) * 5
+    return b.count(max(list(b))) == b.count(min(list(b))) * 5
 
 
-for i in range(1, 10000):
+for i in range(1, 1000000):
     if f(i):
         print(i)
         break

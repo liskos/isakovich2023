@@ -6,7 +6,6 @@ def f(n):
             b = b[1:]
     else:
         b = '1' + b + '00'
-    b = bin(n)[2:]
     if b.count('1') % 2 == 0:
         b = b[1:]
         while b[0] == '0':

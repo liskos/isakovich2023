@@ -8,6 +8,5 @@ def f(n):
 
 a = []
 for i in range(9, 10000):
-    if f(i) > 88:
-        a.append(i)
-print(min(a))
+    if f(i) == 103:
+        print(i)

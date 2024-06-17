@@ -3,8 +3,9 @@ def f(n, m):
     s2 = bin(m)[2:].count('1') ** 2
     return s1 - s2
 
-
-for i in range(1, 10000):
-    if f(i, p) == 33:
-        print(i)
-        break
+a = []
+for i in range(1, 1000):
+    for m in range(1, 1000):
+        if f(i, m) == 33:
+            a.append(i + m)
+print(min(a))
