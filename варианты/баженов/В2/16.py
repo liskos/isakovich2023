@@ -1,9 +1,7 @@
-import sys
-
-sys.setrecursionlimit(5000)
+import functools
 
 
-
+@functools.lru_cache(None)
 def f(n):
     if n < 2:
         return n
@@ -12,4 +10,4 @@ def f(n):
     if n >= 2 and not(n % 3 == 0):
         return f(n-3) + 3 * f(n-1)-2
 
-print(f(50))
+print(sum(int(x) for x in str(f(50))))
