@@ -1,7 +1,6 @@
 import functools
 
 @functools.lru_cache(None)
-
 def f(n):
     if n < 3:
         return n + 1
@@ -13,7 +12,7 @@ def f(n):
 
 
 k = 0
-for i in range(4, 1000):
+for i in range(1, 1000):
     if f(i) < 8000:
         k += 1
 print(k)

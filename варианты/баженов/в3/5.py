@@ -15,7 +15,7 @@ def che(n):
 
 def f(n):
     b = sem(n)
-    b = int(b, 7)
+    b = int(b, 10)
     b = che(b)
     if int(b, 4) % 2 == 0:
         b = b + '00'
@@ -25,6 +25,6 @@ def f(n):
 
 a = []
 for i in range(1, 10000):
-    if f(i) < 6560:
+    if f(i) <= 6560:
         a.append(i)
 print(sum(a))

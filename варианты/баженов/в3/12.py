@@ -1,5 +1,5 @@
 def f(n):
-    while '14' in n or '7444' in n or '4444' in n or '717' in n:
+    while ('14' in n) or ('7444' in n) or ('4444' in n) or ('717' in n):
         if '14' in n:
             n = n.replace('14','44',1)
         if '7444' in n:
@@ -10,9 +10,7 @@ def f(n):
             n = n.replace('717', '7', 1)
     return n
 
-a = ''
-for i in range(3, 10000):
-    b = f('1' + i * '4')
-    if b > a:
-        a = b
-print(len(a))
+a = []
+for i in range(4, 10000):
+    a.append(len(f('1' + i * '4')))
+    print(max(a))
