@@ -1,9 +1,12 @@
+
 def f(a, b):
-    if a > b:
+    if int(a, 2) < int(b, 2):
         return 0
     if a == b:
         return 1
-    return
+    if a == '1' + (len(a) - 1) * '0':
+        return f(bin(int(a, 2) - 1)[2:], b)
+    return f(bin(int(a, 2) - 1)[2:], b) + f('1' + (len(a) - 1) * '0', b)
 
 
-print(f())
+print(f('1100', '100'))
