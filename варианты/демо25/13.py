@@ -1,7 +1,8 @@
 import ipaddress
 
-
-ip = ipaddress.ip_address("172.16.168.0")
-ma = ipaddress.ip_address("255.255.248.0")
-print(ip.__format__("b"))
-print(ma.__format__("b"))
+k = 0
+net = ipaddress.ip_network('172.16.168.0/255.255.248.0')
+for ip in net:
+    if ip.__format__('b').count('1') % 5 != 0:
+        k += 1
+print(k)
