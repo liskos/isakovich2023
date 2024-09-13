@@ -1,7 +1,5 @@
 import ipaddress
 
 
-m = ipaddress.ip_address('255.255.254.0')
-b = m.__format__('b')
-print(m.__format__('b'))
-print(2 ** b.count('0') - 2)
+m = ipaddress.ip_network('192.168.0.0/255.255.254.0')
+print(len(list(m.hosts())))
