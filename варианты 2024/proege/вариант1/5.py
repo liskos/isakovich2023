@@ -10,12 +10,12 @@ def sh(n):
 def f(n):
     b = sh(n)
     if n % 3 == 0:
-        b = b[:2] + b
-    if n % 3 == 1:
-        sh(n % 3 * 10) + b
+        b = b + b[:2]
+    if n % 3 >= 1:
+        b = b + sh(n % 3 * 10)
     return int(b, 6)
 
-
+print(f(11),f(12))
 a = []
 for i in range(1, 10000):
     if f(i) > 680:

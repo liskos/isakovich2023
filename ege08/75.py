@@ -1,10 +1,12 @@
 import itertools
 
 
-
-for s, i in enumerate(itertools.permutations('КОРАБЛИК'), 1):
+a = set()
+for i in itertools.permutations('КОРАБЛИ', r=6):
     ss = ''.join(i)
-    if 'К' in ss[0] or 'Р' in ss[0] or 'Б' in ss[0] or 'Л' in ss[0]:
-        print(s, ss)
-        break
+    h = (ss.replace('К', '1').replace('Р', '1').replace('Б', '1').replace('Л', '1')
+         .replace('О', '0').replace('А', '0').replace('И', '0'))
+    if '11' not in h and '00' not in h and h[0] == '1':
+        a.add(ss)
+print(len(a),a)
 
