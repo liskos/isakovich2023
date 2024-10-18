@@ -1,8 +1,7 @@
 import ipaddress
 k = 0
-net = ipaddress.ip_network('174.114.120.0/255.255.252.0')
-for ip in net:
-    if ip.__format__('b').count('1') % 2 == 0:
-        k+=1
-        print(ip.__format__('b'))
-print(k)
+ip = ipaddress.ip_address('229.117.114.172')
+for i in range(10, 32):
+    net = ipaddress.ip_network(f'229.117.112.0/{i}', 0)
+    if ip in list(net)[1:-1]:
+        print(net)
