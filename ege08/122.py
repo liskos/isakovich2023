@@ -1,12 +1,12 @@
 import itertools
 
-k = 0
+k = set()
 
 for i in itertools.permutations('МОЛОКО'):
     ss = ''.join(i)
-    k+=1
+    k.add(ss)
 
 
 
-print(k)
+print(len(k))
 #240

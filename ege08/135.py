@@ -1,9 +1,9 @@
 import itertools
 
-k=0
+k=set()
 
-for s, i in enumerate(itertools.product('К1Б1Л1', repeat=6), 1):
-    ss = ''.join(i)
+for s in itertools.permutations('К1Б1Л1', r=6):
+    ss = ''.join(s)
     if '11' not in ss:
-        k+=1
-print(k)
+        k.add(ss)
+print(len(k))

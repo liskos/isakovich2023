@@ -1,9 +1,9 @@
 import itertools
 
-k=0
+k=set()
 
-for s, i in enumerate(itertools.product('В1Р1Н', repeat=5), 1):
-    ss = ''.join(i)
-    if '11' not in ss and ss.count('В') == 1 and ss.count('Р') == 1 and ss.count('Н') == 1:
-        k+=1
-print(k)
+for s in itertools.permutations('В1Р1Н', r=5):
+    ss = ''.join(s)
+    if '11' not in ss:
+        k.add(ss)
+print(len(k))

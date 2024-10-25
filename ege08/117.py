@@ -1,12 +1,12 @@
 import itertools
 
-k = 0
+k = set()
 
-for i in itertools.permutations('12131'):
+for i in itertools.permutations('124131'):
     ss = ''.join(i)
     if '11' not in ss:
-        k+=1
+        k.add(ss)
 
 
 
-print(k)
+print(len(k))

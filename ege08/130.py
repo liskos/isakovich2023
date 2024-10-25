@@ -2,8 +2,8 @@ import itertools
 
 k=0
 
-for s, i in enumerate(itertools.product('1С11Л', repeat=5), 1):
-    ss = ''.join(i)
-    if '11' not in ss and ss.count('С') == 1 and ss.count('Л') == 1:
+for s in itertools.permutations('1С11Л', r=5):
+    ss = ''.join(s)
+    if '11' not in ss:
         k+=1
 print(k)

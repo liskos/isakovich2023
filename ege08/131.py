@@ -1,9 +1,10 @@
 import itertools
 
-k=0
+k=set()
 
-for s, i in enumerate(itertools.product('1Р11Л', repeat=5), 1):
-    ss = ''.join(i)
+for s in itertools.permutations('2Р12Л', r=5):
+    ss = ''.join(s)
+    ss = ss.replace('2', '1')
     if '11' not in ss:
-        k+=1
-print(k)
+        k.add(s)
+print(len(k))

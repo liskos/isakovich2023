@@ -6,10 +6,11 @@ def f(s):
             s = s.replace('>2', '2>', 1)
         if '>0' in s:
             s = s.replace('>0', '3>', 1)
-    return s
+    return s[:-1]
 
 
 c = []
-for i in range(1, 1000):
-    c.append(sum(map(int, '>' + '0' * 17 + i * '3' + 17 * '2')))
-print()
+for i in range(1, 10):
+    x = sum(map(int, f('>' + '0' * 17 + i * '3' + 17 * '2')))
+    if int(x**0.5) ** 2 == x:
+        print(i, x)
