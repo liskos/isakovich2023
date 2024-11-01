@@ -1,8 +1,8 @@
-def f(a,b,c):
-    if a == b or c == 15:
-        return 1
-    if a > b:
-        return 0
-    return f(a + 5, b, c + 1) + f(a * 2, b, c + 1)
-
-print(f(0, 155, 0))
+a = {155}
+for _ in range(15):
+    b = set()
+    for x in a:
+        b.add(x+5)
+        b.add(x*2)
+    a = b.copy()
+print(len(a))

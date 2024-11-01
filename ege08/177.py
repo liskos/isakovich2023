@@ -2,9 +2,9 @@ import itertools
 
 a = set()
 
-for s, i in enumerate(itertools.product('ДЖОБС', repeat=6), 1):
-    ss = ''.join(i)
-    if ss.count('А') <= 2 and ss.count('Д') == 1 and ss.count('О') == 1 and ss.count('С') == 1:
+for s in itertools.product('ДЖОБС', repeat=6):
+    ss = ''.join(s)
+    if ss.count('Ж') <= 2 and ss.count('Д') == 1 and ss.count('О') == 1 and ss.count('С') == 1:
         a.add(ss)
 
 print(len(a))
