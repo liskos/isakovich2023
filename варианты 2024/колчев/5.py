@@ -5,9 +5,9 @@ def f(n):
     else:
         b = '10' + b + '0'
     return int(b, 2)
-
+print(f(4) == 40, f(6) == 15)
 a = []
-for i in range(1, 1000, 2):
+for i in range(2, 1000, 2):
     if f(i) > 999:
         a.append(f(i))
 print(min(a))

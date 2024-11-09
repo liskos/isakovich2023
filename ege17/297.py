@@ -1,0 +1,11 @@
+def f(a, b):
+    return a == abs(a) % 10 * 51 and not(b == abs(b) % 10 * 51)
+
+
+a = [int(x) for x in open('17data/17-297.txt')]
+m51 = max([x for x in a if x % 51 == 0])
+c = []
+for i in range(len(a) - 1):
+    if (f(a[i], a[i+1]) or f(a[i+1], a[i])) and a[i] + a[i+1] < m51:
+        c.append(a[i] + a[i+1])
+print(len(c), max(c))
