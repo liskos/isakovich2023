@@ -4,6 +4,7 @@ def f(n):
 a = [int(x) for x in open('17data/17-9.txt')]
 c = []
 for i in range(len(a) - 2):
-    if f(a[i]) and not(f(a[i+1])) or f(a[i+2]):
-        c.append(a[i] + a[i+1] + a[i+2])
-print(len(c), max(c))
+    t = [x for x in a[i:i+3] if f(x)]
+    if len(t) >= 2:
+        c.append(max(a[i], a[i+1], a[i+2]))
+print(len(c), sum(c))

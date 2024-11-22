@@ -5,6 +5,6 @@ def f(a, b):
 a = [int(x) for x in open('17data/17-3.txt')]
 c = []
 for i in range(len(a) - 1):
-    if f(a[i], a[i+1]) or not(f(a[i], a[i+1])):
+    if f(a[i], a[i+1]) or f(a[i+1], a[i]):
         c.append(a[i] + a[i+1])
 print(len(c), max(c))

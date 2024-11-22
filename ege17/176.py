@@ -1,5 +1,5 @@
 def f(a):
-    return ((a % 10) + (a % 100 // 10)) > 15 and a % 3 > 0 and a % 4 > 0 and a % 7 > 0
+    return ((a % 10) + (a % 100 // 10)) >= 15 and a % 3 > 0 and a % 4 > 0 and a % 7 > 0
 
 
 a = [int(x) for x in open('17data/17-4.txt')]

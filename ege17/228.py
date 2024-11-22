@@ -3,7 +3,7 @@ def f(a, b, c):
 
 
 a = [int(x) for x in open('17data/17-1.txt')]
-sr = sum(a) // len(a)
+sr = sum(a) / len(a)
 c = []
 for i in range(len(a) - 2):
     if f(a[i], a[i+1], a[i+2]):

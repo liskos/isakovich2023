@@ -1,5 +1,5 @@
 def f(a):
-    return hex(a)[-1] == 'B' and a % 7 == 0 and a % 6 != 0 and a % 13 != 0 and a % 19 != 0
+    return hex(a)[-1] == 'b' and a % 7 == 0 and a % 6 != 0 and a % 13 != 0 and a % 19 != 0
 
 
 a = [int(x) for x in open('17data/17-4.txt')]

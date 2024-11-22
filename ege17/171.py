@@ -1,5 +1,5 @@
 def f(a):
-    return a % 31 == 0 and a % 47 == 0 and a % 53 == 0
+    return (a % 31 == 0 or a % 47 == 0 or a % 53 == 0) and (a % 3 == a % 5)
 
 
 a = [int(x) for x in open('17data/17-4.txt')]

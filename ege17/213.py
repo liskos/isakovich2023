@@ -1,5 +1,5 @@
 def f(a, b):
-    return (a > sr or b > sr) and (a + b) % 100 == 31
+    return (a > sr and b > sr) and abs(a + b) % 100 == 31
 
 
 a = [int(x) for x in open('17data/17-1.txt')]

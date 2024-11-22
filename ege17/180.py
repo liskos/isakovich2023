@@ -1,5 +1,5 @@
 def f(a):
-    return 
+    return a % 5 == 3 and a % 9 == 5 and a % 8 != 7
 
 
 a = [int(x) for x in open('17data/17-4.txt')]

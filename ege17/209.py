@@ -1,5 +1,5 @@
 def f(a, b):
-    return (a % 7 == 0 or b % 7 == 0) and (a + b) % 100 == 19
+    return (a % 7 == 0 or b % 7 == 0) and abs(a + b) % 100 == 19
 
 
 a = [int(x) for x in open('17data/17-205.txt')]

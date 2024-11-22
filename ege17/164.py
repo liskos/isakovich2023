@@ -1,5 +1,5 @@
 def f(a, b, c):
-    return (a % 3 == 0 and b % 3 == 0 and c % 3 == 0) and (a % 12 == 0 or b % 12 == 0 or c % 12 == 0)
+    return (a * b * c) % 7 == 0 and abs(a + b + c) % 10 == 5
 
 
 a = [int(x) for x in open('17data/17-3.txt')]
