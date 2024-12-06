@@ -3,7 +3,7 @@ def f(s):
     while s > 0:
         n.append(str(s % 7))
         s = s // 7
-    return ''.join(n)
+    return ''.join(n)[::-1]
 
 a = [int(x) for x in open('17data/17-243.txt')]
 ma = max([x for x in a if x % 107 == 0])
