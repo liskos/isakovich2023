@@ -3,11 +3,11 @@ def f(a, b):
         return 0
     if a == b:
         return 1
+    k = f(a - 1, b)
     if a % 2 == 0:
-        return f(a - 1, b) + f(a // 2, b)
+        k += f(a // 2, b)
     if a % 3 == 0:
-        return f(a - 1, b) + f(a // 3, b)
-    else:
-        return f(a - 1, b)
+        k += f(a // 3, b)
+    return k
 
 print(f(122, 57) * f(57, 11))
