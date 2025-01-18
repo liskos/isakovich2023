@@ -1,8 +1,5 @@
-
-
-
 def f(x,y,z,w):
-    return (not(not(not y or x) or w)) or (not z or x)
+    return (not(not(y or x) or w)) or (not z or x)
 
 import itertools
 for a in itertools.product([0, 1], repeat=6):
