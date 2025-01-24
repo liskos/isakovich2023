@@ -1,8 +1,9 @@
 import itertools
 c = set()
 
-for i in itertools.permutations('ПАРИЖАНКА'):
+for i in itertools.permutations('ПАРИЖАНКА', r=9):
     ss = ''.join(i)
-    if ss.count('АА') == 1:
+    sh = ss.replace("И", 'А')
+    if sh.count('АА') == 1:
         c.add(ss)
 print(len(c))
