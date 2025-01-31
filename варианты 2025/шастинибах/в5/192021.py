@@ -1,31 +1,22 @@
-def f(x, y):
-    return (x + 2, y), (x, y + 2), (x + 3, y), (x, y + 3), (x * 3, y), (x, y * 3)
+def f(x):
+    return x + 2, x + 3, x * 3
 
-a = [[' '] * 400 for _ in range(400)]
-for i in range(400):
-    for j in range(400):
-        if i + j >= 313:
-            a[i][j] = '0'
-
-for i in range(312):
-    for j in range(312):
-        if a[i][j] == ' ' and any(a[x][y] == '0' for x, y in f(i, j)):
-            a[i][j] = '1'
-for i in range(312):
-    for j in range(312):
-        if a[i][j] == ' ' and all(a[x][y] == '1' for x, y in f(i, j)):
-            a[i][j] = '2'
-for i in range(312):
-    for j in range(312):
-        if a[i][j] == ' ' and any(a[x][y] == '2' for x, y in f(i, j)):
-            a[i][j] = '3'
-for i in range(312):
-    for j in range(312):
-        if a[i][j] == ' ' and all(a[x][y] in '13' for x, y in f(i, j)):
-            a[i][j] = '4'
-import sys
-
-sys.stdout = open('192021.xls', mode='w')
-
-for i in range(1, 400):
-    print(*a[i][1:], sep='\t')
+a = [' '] * 1000
+for i in range(1000):
+        if i >= 313:
+            a[i] = '0'
+for i in range(1000):
+        if a[i] == ' ' and any(a[x] == '0' for x in f(i)):
+            a[i] = '1'
+for i in range(1000):
+        if a[i] == ' ' and all(a[x] == '1' for x in f(i)):
+            a[i] = '2'
+for i in range(1000):
+        if a[i] == ' ' and any(a[x] == '2' for x in f(i)):
+            a[i] = '3'
+for i in range(1000):
+        if a[i] == ' ' and all(a[x] in '13' for x in f(i)):
+            a[i] = '4'
+print([i for i in range(1000) if a[i] == '2'])
+print([i for i in range(1000) if a[i] == '3'])
+print([i for i in range(1000) if a[i] == '4'])

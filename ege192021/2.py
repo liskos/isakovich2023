@@ -27,7 +27,7 @@ for i in range(73):
 
 for i in range(73):
     for j in range(73):
-        if a[i][j] == ' ' and any(a[x][y] in '13' for x, y in f(i, j)):
+        if a[i][j] == ' ' and all(a[x][y] in '13' for x, y in f(i, j)):
             a[i][j] = '4'
 
 import sys
