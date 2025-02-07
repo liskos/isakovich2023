@@ -10,9 +10,12 @@ def f(n):
     if n % 3 == 0:
         b = b + b[::-1]
     else:
-        b = b + str(sum(b))
+        b = b + sh(sum(int(i) for i in b))
     return int(b, 6)
+
+print(f(11), f(12))
 c = []
-for i in range(25, 1000, 2):
-    c.append(f(i))
+for i in range(25, 1000):
+    if f(i) % 2 == 0:
+        c.append(f(i))
 print(min(c))

@@ -1,32 +1,25 @@
-def f(x, y):
-    return (x + 10, y), (x, y + 10), (x * 2, y), (x, y * 2)
+def f(x):
+    a = [x + 100, x * 2]
 
+    return a
 
-a = [[' '] * 200 for _ in range(200)]
-
-for i in range(200):
-    for j in range(200):
-        if i + j >= 100:
-            a[i][j] = '0'
-for i in range(200):
-    for j in range(200):
-        if a[i][j] == ' ' and any(a[x][y] == '0' for x, y in f(i, j)):
-            a[i][j] = '1'
-for i in range(200):
-    for j in range(200):
-        if a[i][j] == ' ' and all(a[x][y] == '1' for x, y in f(i, j)):
-            a[i][j] = '2'
-for i in range(200):
-    for j in range(200):
-        if a[i][j] == ' ' and any(a[x][y] == '2' for x, y in f(i, j)):
-            a[i][j] = '3'
-for i in range(200):
-    for j in range(200):
-        if a[i][j] == ' ' and all(a[x][y] in '13' for x, y in f(i, j)):
-            a[i][j] = '4'
-import sys
-
-sys.stdout = open('52.xls', mode='w')
-
-for i in range(1, 200):
-    print(*a[i][1:], sep='\t')
+a = [' '] * 2000
+for i in range(2000):
+    if i >= 1000:
+        a[i] = '0'
+for i in range(2000):
+    if a[i] == ' ' and any(a[x] == '0' for x in f(i)):
+        a[i] = '1'
+for i in range(2000):
+    if a[i] == ' ' and all(a[x] in '1' for x in f(i)):
+        a[i] = '2'
+for i in range(2000):
+    if a[i] == ' ' and any(a[x] == '2' for x in f(i)):
+        a[i] = '3'
+for i in range(2000):
+    if a[i] == ' ' and all(a[x] in '13' for x in f(i)):
+        a[i] = '4'
+print([i for i in range(2000) if a[i] == '1'])
+print(len([i for i in range(2000) if a[i] == '2']))
+print(len([i for i in range(2000) if a[i] == '3']))
+print([i for i in range(2000) if a[i] == '4'])

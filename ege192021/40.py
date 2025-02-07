@@ -1,6 +1,5 @@
 def f(x):
     a = [x + 3, x * 2]
-    b = [i for i in a if i % 2 > 0]
     return a
 
 a = [' '] * 200
