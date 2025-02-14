@@ -6,9 +6,9 @@ a = [[' '] * 600 for _ in range(600)]
 
 for i in range(600):
     for j in range(600):
-        if 47 >= i + j >= 59:
+        if 47 <= i + j <= 59:
             a[i][j] = '0'
-        elif i + j >= 47:
+        elif i + j >= 59:
             a[i][j] = '-1'
 for i in range(600):
     for j in range(600):
