@@ -8,9 +8,9 @@ def f(n):
 
 
 m = set()
-for i in range(286564, 287271):
+for i in range(394480, 394540):
     z = f(i)
     m.add(len(z))
-    if len(z) == 112:
+    if len(z) == 48:
         print(len(z), *sorted(z, reverse=True)[:2])
 print(max(m))

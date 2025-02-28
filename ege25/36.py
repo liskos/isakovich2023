@@ -6,11 +6,10 @@ def f(n):
             a.add(n//i)
     return a
 
-
-m = set()
-for i in range(286564, 287271):
+k = 0
+for i in range(394480, 394540):
     z = f(i)
-    m.add(len(z))
-    if len(z) == 112:
+    if len(z) % 2 > 0:
+        k += 1
         print(len(z), *sorted(z, reverse=True)[:2])
-print(max(m))
+
