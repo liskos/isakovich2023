@@ -19,7 +19,7 @@ def f(n):
         b = b + p(d(int(b)))
     return int(b, 5)
 
-
-for i in range(50, 100):
+print(f(50), f(55))
+for i in range(50, 101):
     if f(i) % 5 == 0:
         print(f(i))

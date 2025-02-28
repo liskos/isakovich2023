@@ -1,16 +1,18 @@
-def f(n):
-    a = set()
-    for i in range(1, int(n ** 0.5)+1):
-        if n % i == 0:
-            a.add(i)
-            a.add(n//i)
-    return a
+def prime(n):
+    a = [True] * n
+    a[0] = False
+    a[1] = False
+    for i in range(2, n):
+        for j in range(i ** 2, n, i):
+            a[j] = False
+    b = [i for i in range(n) if a[i]]
+    return b
 
-
+p = prime(20000)
 k = 0
 for i in range(2, 20001):
-    if len(f(i)) > 3:
+    x = [j for j in p if i % j == 0]
+    if len(x) > 3:
         k+=1
-        print(len(f(i)), *sorted(f(i), reverse=True)[:2])
 print(k)
 

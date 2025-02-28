@@ -8,11 +8,16 @@ def prime(n):
     b = [i for i in range(n) if a[i]]
     return b
 
-p = prime(20000)
+p = prime(10000000)
+print("про")
 m = 0
-for i in range(2, 20001):
+for i in range(2, 10000001):
     x = [j for j in p if i % j == 0]
-    if len(x) == 5:
+    m = max(m, len(x))
+print(m, "max")
+for i in range(2, 10000001):
+    x = [j for j in p if i % j == 0]
+    if len(x) == m:
         print(i, len(x))
         break
 

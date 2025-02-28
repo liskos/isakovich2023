@@ -8,9 +8,8 @@ def f(n):
     return a
 
 
-k = 0
-for i in range(2, 30001):
-    if sum(f(i)) < i:
-        k+=1
-print(k)
+
+for i in range(1000, 20001):
+    if sum(f(i)) + 1 == i:
+        print(i)
 

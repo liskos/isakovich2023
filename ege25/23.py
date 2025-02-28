@@ -4,7 +4,8 @@ def f(n):
         if n % i == 0:
             a.add(i)
             a.add(n//i)
-    return a
+    b = [x for x in a if x % 2 > 0]
+    return b
 
 for i in range(190061, 190080 + 1):
     z = f(i)
