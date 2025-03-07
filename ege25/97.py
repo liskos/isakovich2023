@@ -8,7 +8,7 @@ def f(n):
 
 
 
-for i in range(135790, 163228):
+for i in range(135790, 163228+1):
     if sum(f(i)) > 460000:
         print(len(f(i)), sum(f(i)))
 
