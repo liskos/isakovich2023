@@ -17,7 +17,7 @@ def get_centroid(claster):
     r = []
     for p1 in claster:
         r += [(sum(math.dist(p1, p2) for p2 in claster), p1)]
-        return min(r)[1]
+    return min(r)[1]
 
 def visual(clasters):
     turtle.up()
