@@ -9,7 +9,7 @@ def tr(n):
 def f(n):
     b = tr(n)
     if n % 3 == 0:
-        b = b + b[:-3]
+        b = b + b[:3]
     else:
         b = b + tr(sum([int(x) for x in b]) * 5)
     return int(b, 3)

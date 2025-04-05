@@ -1,11 +1,11 @@
-import math, turtle
+import turtle
 
 def clasterisation(data, r):
     clasters = []
     while data:
         clasters.append([data.pop()])
-        for p1 in clasters[-1]:
-            sosedi = [p2 for p2 in data if math.dist(p1, p2) <= r]
+        for x1, y1 in clasters[-1]:
+            sosedi = [[x2, y2] for x2, y2 in data if abs(x1 - x2) + abs(y1 - y2) <= r]
             clasters[-1].extend(sosedi)
             for p in sosedi:
                 data.remove(p)
@@ -14,8 +14,8 @@ def clasterisation(data, r):
 
 def get_centroid(claster):
     r = []
-    for p1 in claster:
-        r += [(sum(math.dist(p1, p2) for p2 in claster), p1)]
+    for x1, y1 in claster:
+        r += [(sum(abs(x1 - x2) + abs(y1 - y2) for x2, y2 in claster), [x1, y1])]
     return min(r)[1]
 
 
