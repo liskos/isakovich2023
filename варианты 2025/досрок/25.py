@@ -7,8 +7,8 @@ def f(n):
     b = [x for x in a if x % 10 == 7 and x != n and x != 7]
     return b
 k = 0
-for i in range(1125000, 10**10):
-    if len(f(i)) > 1:
+for i in range(1125001, 10**10):
+    if len(f(i)) > 0:
         k += 1
         print(i, min(f(i)))
     if k == 5:
