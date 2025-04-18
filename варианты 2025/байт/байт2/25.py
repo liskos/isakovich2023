@@ -17,9 +17,13 @@ def q(n):
             a.add(n//i)
     return sum(a)
 k = 0
-for i in range(1000000, 10 ** 10):
-    if len(prime(q(i))) > 1:
+p = prime(3000_000)
+m = 0
+for i in range(1000001, 10 ** 10):
+    m = max(q(i), m)
+    if q(i) in p:
         print(i, q(i))
         k += 1
-    if k == 5:
-        break
+        if k == 5:
+            break
+print(m)
