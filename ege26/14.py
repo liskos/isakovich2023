@@ -9,7 +9,7 @@ def f(filename):
             v.append(x)
         else:
             break
-    sv = s - sum(v) + v[-1]
+    sv = s - sum(v[:-1])
     b = max(x for x in a if x <= sv)
     return len(v), b
 
