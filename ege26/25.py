@@ -1,11 +1,13 @@
 def f(filename):
     file = open(filename)
     n, k, m = map(int, file.readline().split())
+    print(f"всего смартофонов {n}, {k} бюджетные, {m} премиальные")
     a = [int(file.readline()) for _ in range(n)]
-    a = sorted(a)
-    b = a[:k]
-    r = a[m:]
-    return r[m+4], sum(b) // len(b)
+    a = sorted(a, reverse=True)
+    print(a)
+    b = a[-k:]
+    p = a[:m]
+    return p[-1], sum(b) // len(b)
 
 
 print(*f('25.txt'))

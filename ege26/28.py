@@ -2,13 +2,12 @@ def f(filename):
     file = open(filename)
     s, n = map(int, file.readline().split())
     a = [int(file.readline()) for _ in range(n)]
-    a = sorted(a)
+    a = sorted(a, reverse=True)
     v = []
     for x in a:
         if x + sum(v) <= s:
             v.append(x)
-        else:
-            break
+
     return len(v), min(v)
 
 print(*f('28.txt'))
