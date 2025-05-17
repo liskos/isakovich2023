@@ -10,6 +10,7 @@ def f(filename):
     r = []
     stand = []
     lead = []
+    print(sr)
 
     for x in a:
         if x[1] >= sr:
