@@ -22,7 +22,7 @@ def f(file_name):
     k = int(file.readline())  # кол-во ячеек в камере хранения
     n = int(file.readline())  # кол-во пассажиров
     a = [list(map(int, file.readline().split())) for _ in range(n)]  # заявки пассажиров
-    print(len(set([x[1]  for x in a])))
+    print(len(set([x[1] for x in a])))
     a.sort(key=lambda x: (x[0], x[1]))  # сортируем заявки по времени передачи багажа и если время передачи одинаковое,
                                         # то по времени освобождения ячейки
     print(a)
