@@ -8,9 +8,11 @@ def prime(n):
     b = [i for i in range(n) if a[i]]
     return b
 k = 0
-for i in range(10000, 10**10, 7):
-    if len(prime(i)) == 4 and i % 7 == 0:
-        print(i, max(prime(i)))
+p = prime(100000)
+for i in range(10003, 10**10, 7):
+    b = [x for x in p if i % x == 0]
+    if len(b) == 4:
+        print(i, max(b))
         k += 1
         if k == 7:
             break

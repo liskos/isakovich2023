@@ -11,12 +11,28 @@ def clasterisation(data, r):
                 data.remove(p)
     return clasters
 
+
+def clasterisation2(data):
+    clasters = [[], [], []]
+    for x, y in data:
+        if x > 2:
+            clasters[0].append([x, y])
+        elif y > 0:
+            clasters[1].append([x, y])
+        else:
+            clasters[2].append([x, y])
+    return clasters
+
 def get_centroid(claster):
     r = []
     for p1 in claster:
         r += [(sum(math.dist(p1, p2) for p2 in claster), p1)]
+    return min(r)[1]
+def get_anticentroid(claster):
+    r = []
+    for p1 in claster:
+        r += [(sum(math.dist(p1, p2) for p2 in claster), p1)]
     return max(r)[1]
-
 
 def visual(clasters):
     turtle.up()
@@ -32,12 +48,16 @@ data = [list(map(float, line.split())) for line in open('27A.txt')]
 clasters = clasterisation(data, 0.7)
 print([len(c) for c in clasters])
 centrs = [get_centroid(c) for c in clasters]
-x, y = sum(p[0] for p in centrs) / len(centrs), sum(p[1] for p in centrs) / len(centrs)
-print(x * 10000, y * 10000)
+anticentrs = [get_anticentroid(c) for c in clasters]
+a1 = math.dist(centrs[0], anticentrs[0])
+a2 = math.dist(centrs[1], anticentrs[1])
+print(a1 * 10000, a2 * 10000)
 
 data = [list(map(float, line.split())) for line in open('27B.txt')]
-clasters = clasterisation(data, 0.4)
+clasters = clasterisation2(data)
 print([len(c) for c in clasters])
 centrs = [get_centroid(c) for c in clasters]
-x, y = sum(p[0] for p in centrs) / len(centrs), sum(p[1] for p in centrs) / len(centrs)
-print(x * 10000, y * 10000)
+anticentrs = [get_anticentroid(c) for c in clasters]
+a1 = math.dist(centrs[1], anticentrs[1])
+a2 = math.dist(centrs[0], anticentrs[0])
+print(a1 * 10000, a2 * 10000)

@@ -1,7 +1,7 @@
 def f(x, y):
     return (x - 2, y), (x, y - 2), (x - 6, y), (x, y - 6), (x // 3, y), (x, y // 3)
 
-
+print(f(6, 9))
 a = [[' '] * 700 for _ in range(700)]
 
 for i in range(700):
