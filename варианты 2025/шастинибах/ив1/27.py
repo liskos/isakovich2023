@@ -32,4 +32,7 @@ data = [list(map(float, line.split())) for line in open('27a.txt')]
 clasters = clasterisation2(data)
 print([len(c) for c in clasters])
 centrs = [get_centroid(c) for c in clasters]
+plot = [len(c) / 16 for c in clasters]
+print(plot)
+print(sum(plot) / 3 * 1000, math.dist(centrs[0], centrs[1]) * 1000)
 

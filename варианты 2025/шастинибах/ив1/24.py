@@ -1,12 +1,16 @@
 a = open('24.txt').read()
-m = 400 * 4
-
-for left in range(len(a)):
-    for right in range(left + m, len(a)):
-        t = a[left:right]
-        c = t.count('LND')
-        if c <= 10000:
-            m = max(len(t), m)
-        elif c >= 10000:
-            break
+k = 0
+m = 0
+left = 0
+for right in range(len(a)+1):
+    if a[right-3:right] == 'LND':
+        k+=1
+    while k > 10000:
+        if a[left:left+3] == 'LND':
+            k-=1
+        left += 1
+    left2 = left
+    while a[left2] != a[right-1]:
+        left2 += 1
+    m = max(m, right-left2)
 print(m)
